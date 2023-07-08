@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
             console.log("Error en la consulta", error)
             res.status(500).send("Error en la consulta")
         } else {
-            res.render('mascotas', { title: 'mascotas', mascotas: results, opcion: 'disabled', estado: true })
+            res.render('pacientes', { title: 'pacientes', mascotas: results, opcion: 'disabled', estado: true })
         }
     });
 });
@@ -20,14 +20,14 @@ router.get('/enviar/:clave', function (req, res, next) {
             console.log("Error en la consulta", error)
             res.status(500).send("Error en la consulta")
         } else {
-            res.render('mascotas', { title: 'mascotas', claveSeleccionada: clave, mascotas: results, opcion: 'disabled', estado: false })
+            res.render('pacientes', { title: 'pacientes', claveSeleccionada: clave, mascotas: results, opcion: 'disabled', estado: false })
         }
     });
 });
 
 
-router.get('/agregar-mascota', function (req, res, next) {
-    res.sendFile('registro-mascotas.html', { root: 'public' })
+router.get('/agregar-pacientes', function (req, res, next) {
+    res.sendFile('registro-pacientes.html', { root: 'public' })
 });
 //Agregar mascotas
 router.post('/agregar', (req, res) => {
@@ -41,7 +41,7 @@ router.post('/agregar', (req, res) => {
             console.log("Error en la consulta", error)
             res.status(500).send("Error en la consulta")
         } else {
-            res.redirect('/mascotas')
+            res.redirect('/pacientes')
         }
     });
 
@@ -59,7 +59,7 @@ router.get('/eliminar/:cedula', function (req, res, next) {
                     console.log("Error en la consulta", error)
                     res.status(500).send("Error en la consulta")
                 } else {
-                    res.redirect('/mascotas')
+                    res.redirect('/pacientes')
                 }
             });
         }
@@ -77,7 +77,7 @@ router.post('/actualizar/:cedula', (req, res) => {
             console.log("Ocurrio un error en la ejecución", error)
             res.status(500).send("Error en la consulta");
         } else {
-            res.redirect('/mascotas');
+            res.redirect('/pacientes');
         }
     });
 })
