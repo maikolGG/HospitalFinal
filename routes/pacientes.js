@@ -29,7 +29,7 @@ router.get('/enviar/:clave', function (req, res, next) {
 router.get('/agregar-pacientes', function (req, res, next) {
     res.sendFile('registro-pacientes.html', { root: 'public' })
 });
-//Agregar mascotas
+
 router.post('/agregar', (req, res) => {
     const cedula = req.body.cedula
     const nombre = req.body.mascota
@@ -46,7 +46,7 @@ router.post('/agregar', (req, res) => {
     });
 
 })
-//eliminar macotas
+
 router.get('/eliminar/:cedula', function (req, res, next) {
     const cedula = req.params.cedula
     connection.query(`DELETE FROM cita_medica WHERE id_mascota=${cedula}`, (error, results) => {
