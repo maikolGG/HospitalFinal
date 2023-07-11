@@ -1,5 +1,5 @@
 body {
-    font-family:'Courier New', Courier, monospace;
+    font-family:Arial, Helvetica, sans-serif;
     background-color: #e08823;
     margin: 0;
     padding: 20px;
@@ -40,7 +40,7 @@ select {
 }
 
 a, input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #2d68e9;
     color: #fff;
     text-decoration: none;
     padding: 10px 16px;
